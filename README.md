@@ -2,10 +2,10 @@
 
 Dream Team, CMS
 
-## Project overview
+### Project overview
 
 A full stack CMS (Content Management System) for startups & small companies to easily manage their employees data. Technologies used: MongoDB, Mongoose, Express, Node.js, AJAX, JSON, Javascript, Jquery, Bootstrap, Handlebars, CSS and HTML
 
-## Behind the creation
+### Behind the creation
 
-To develop a deep understanding of web applications database management & **C.R.U.D** operations (**C**\rreate, **R**\eead ). 
+To develop a deep understanding of web applications database management & **C.R.U.D** operations (**C**reate, **R**ead, **U**pdate, **D**elete).
