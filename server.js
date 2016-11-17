@@ -37,6 +37,14 @@ app.get('/', function(req, res) {
 	});
 });
 
+app.get('/api/companies', function(req, res){
+	res.json(employees);
+})
+
+
+
+
+
 var employees = [
   {
     name: 'Josefa Robel',
