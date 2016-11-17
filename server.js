@@ -2,17 +2,17 @@
 
 	name: String,
 	positionTitle: String,
-  phoneNumber: String,    //changed from number
+  phoneNumber: String,
 	email: String,
 	birthday: String,
 	equity: String,
 	fullTime: Boolean,
 	startDate: String,
-	salary: String,        //changed from nuber
+	salary: String,
 	shirtSize: String,
 	favoriteFoods: [Array],
 	allergies: [Array],
-  badgePhoto: String     //added for personality
+  badgePhoto: String     
 
 var employees = [
   {
@@ -74,7 +74,67 @@ var employees = [
     favoriteFoods: ['steak', 'potatoes', 'protein shakes'],
     allergies: ['losing'],
     badgePhoto: 'https://s3.amazonaws.com/uifaces/faces/twitter/shadeed9/128.jpg'
-  }
+  },
+	{
+		name: 'Bobbie Williamson',
+		positionTitle: 'Database Engineer',
+		phoneNumber: '(650)347-1624',
+		email: 'Bobbie.Williamson33@hotmail.com',
+		birthday: '8/7/1982',
+		equity: '.8',
+		fullTime: true,
+		startDate: '1/29/2011',
+		salary: '95,000',
+		shirtSize: 'large',
+		favoriteFoods: ['orange juice', 'strawberries', 'pancakes'],
+		allergies: [''],
+		badgePhoto: 'https://s3.amazonaws.com/uifaces/faces/twitter/okseanjay/128.jpg'
+	},
+	{
+		name: 'Tony Casper',
+		positionTitle: 'Software Engineer',
+		phoneNumber: '(510)578-7065',
+		email: 'Tina_Casper@hotmail.com',
+		birthday: '2/22/1974',
+		equity: '.8',
+		fullTime: true,
+		startDate: '8/12/2013',
+		salary: '112,000',
+		shirtSize: 'large',
+		favoriteFoods: ['bacon', 'more bacon'],
+		allergies: ['shellfish'],
+		badgePhoto: 'https://s3.amazonaws.com/uifaces/faces/twitter/n1ght_coder/128.jpg'
+	},
+	{
+		name: 'Burley Hickle',
+		positionTitle: 'Senior Developer',
+		phoneNumber: '(510)136-5482',
+		email: 'Burley_Hickle50@yahoo.com',
+		birthday: '2/22/1974',
+		equity: '1.2',
+		fullTime: true,
+		startDate: '9/3/2012',
+		salary: '135,000',
+		shirtSize: 'extra-large',
+		favoriteFoods: ['pizza', 'beer', 'chicken wings'],
+		allergies: [],
+		badgePhoto: 'https://s3.amazonaws.com/uifaces/faces/twitter/scottfeltham/128.jpg'
+	},
+	{
+		name: 'Neha Kuhic',
+		positionTitle: 'Quality Assurance Engineer',
+		phoneNumber: '(408)447-7489',
+		email: 'Neha.Kuhic@gmail.com',
+		birthday: '6/28/1983',
+		equity: '.9',
+		fullTime: true,
+		startDate: '9/15/2012',
+		salary: '109,000',
+		shirtSize: 'medium',
+		favoriteFoods: ['wraps'],
+		allergies: [],
+		badgePhoto: 'https://s3.amazonaws.com/uifaces/faces/twitter/algunsanabria/128.jpg'
+	}
 ];
 
 
