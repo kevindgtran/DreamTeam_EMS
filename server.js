@@ -1,6 +1,11 @@
 var express = require('express'),
 	bodyParser = require('body-parser');
+
+// connect to db models
+var db = require('./models');
+
 var app = express();
+
 
 // serve static files in public
 app.use(express.static('public'));
