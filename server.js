@@ -1,18 +1,36 @@
-// var app = express();
+var express = require('express'),
+	bodyParser = require('body-parser');
+var app = express();
 
-	name: String,
-	positionTitle: String,
-  phoneNumber: String,
-	email: String,
-	birthday: String,
-	equity: String,
-	fullTime: Boolean,
-	startDate: String,
-	salary: String,
-	shirtSize: String,
-	favoriteFoods: [Array],
-	allergies: [Array],
-  badgePhoto: String     
+// serve static files in public
+app.use(express.static('public'));
+
+
+// body parser
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
+
+	// name: String,
+	// positionTitle: String,
+  // phoneNumber: String,
+	// email: String,
+	// birthday: String,
+	// equity: String,
+	// fullTime: Boolean,
+	// startDate: String,
+	// salary: String,
+	// shirtSize: String,
+	// favoriteFoods: [Array],
+	// allergies: [Array],
+  // badgePhoto: String
+
+	// get index.html
+app.get('/', function(req, res) {
+	res.sendFile('views/index.html', {
+		root: __dirname
+	});
+});
 
 var employees = [
   {
@@ -139,6 +157,6 @@ var employees = [
 
 
 
-// app.listen(3000, function() {
-//   console.log('listening to http://localhost:3000/');
-// });
+app.listen(3000, function() {
+  console.log('listening to http://localhost:3000/');
+});
