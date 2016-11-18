@@ -21,8 +21,10 @@
   },
   "homepage": "https://github.com/theycallmekevo/Project-1#readme",
   "dependencies": {
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
+    "ejs": "^2.5.2",
     "express": "^4.14.0",
     "mongodb": "^2.2.11",
     "mongoose": "^4.6.8"
