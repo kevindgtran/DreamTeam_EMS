@@ -4,8 +4,9 @@ var express = require('express'),
 // connect to db models
 var db = require('./models');
 
-var app = express();
+var controllers = require('./controllers');
 
+var app = express();
 
 // serve static files in public
 app.use(express.static('public'));
@@ -16,19 +17,7 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
-	// name: String,
-	// positionTitle: String,
-  // phoneNumber: String,
-	// email: String,
-	// birthday: String,
-	// equity: String,
-	// fullTime: Boolean,
-	// startDate: String,
-	// salary: String,
-	// shirtSize: String,
-	// favoriteFoods: [Array],
-	// allergies: [Array],
-  // badgePhoto: String
+
 
 	// get index.html
 app.get('/', function(req, res) {
@@ -37,9 +26,8 @@ app.get('/', function(req, res) {
 	});
 });
 
-app.get('/api/companies', function(req, res){
-	res.json(employees);
-})
+
+app.get('/api/companies', controllers.companies.index);
 
 
 
