@@ -1,6 +1,6 @@
 var db = require('./models');
 
-var companies = [
+var companiesList = [
   {
     name: 'Katies Gadgets & Gizmos',
     description: 'Specializing is the selling of gadgets and gizmos',
@@ -18,3 +18,14 @@ var companies = [
     //employees
   }
 ];
+
+
+db.Company.remove({}, function(err, companies){
+  console.log('removed all companies');
+
+  var newCompany = db.Company.create(companiesList, function(err, companies){
+    if (err) { return console.log('Error', err); }
+    console.log("created: ", company);
+  })
+  process.exit();
+});
