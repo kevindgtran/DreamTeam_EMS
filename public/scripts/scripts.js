@@ -8,10 +8,8 @@ $(document).ready(function(){
   })
 
 $('#loginButton').on('click', function(event){
-  event.preventDefault();
-  $.post('/sessions', signupData, function(response){
-    console.log(response);
-    })
+  var loginData = $('#login-form').serialize();
+  console.log(loginData);
   })
 
 

@@ -17,6 +17,30 @@ UserSchema.statics.createSecure = function (name, email, password, callback) {
 // store it in variable `UserModel` because `this` changes context in nested callbacks
 var UserModel = this;
 
+UserSchema.methods.checkPassword = function (password) {
+  return bcrypt.compareSync(password, this.passwordDigest);
+};
+
+// authenticate user (when user logs in)
+UserSchema.statics.authenticate = function (name, email, password, callback) {
+ // find user by email entered at log in
+ // remember `this` refers to the User for methods defined on userSchema.statics
+ this.findOne({email: email}, function (err, foundUser) {
+   console.log(foundUser);
+
+   // throw error if can't find user
+   if (!foundUser) {
+     console.log('No user with email ' + email);
+     callback("Error: no user found", null);  // better error structures are available, but a string is good enough for now
+   // if we found a user, check if password is correct
+   } else if (foundUser.checkPassword(password)) {
+     callback(null, foundUser);
+   } else {
+     callback("Error: incorrect password", null);
+   }
+ });
+};
+
 // hash password user enters at sign up
 bcrypt.genSalt(function (err, salt) {
   console.log('salt: ', salt);  // changes every time
