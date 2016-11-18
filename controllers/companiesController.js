@@ -1,5 +1,7 @@
 var db = require('../models');
 
+
+
 function index(req, res) {
   db.Company.find(function(err, company) {
     if (err) {
@@ -9,12 +11,6 @@ function index(req, res) {
   });
 };
 
-function create(req, res) {
-// fill in later
 
-}
 
-module.exports = {
-  index: index,
-  create: create
-};
+module.exports.index = index;

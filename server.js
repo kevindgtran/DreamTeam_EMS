@@ -3,6 +3,7 @@ var express = require('express'),
 
 // connect to db models
 var db = require('./models');
+
 var controllers = require('./controllers');
 
 var app = express();
@@ -26,7 +27,7 @@ app.get('/', function(req, res) {
 });
 
 
-//app.get('/api/companies', controllers.companies.index);
+app.get('/api/companies', controllers.companies.index);
 
 
 
