@@ -39,7 +39,6 @@ app.get('/', function(req, res) {
 	});
 });
 
-
 app.get('/api/companies', controllers.companies.index);
 
 //where the api is grabbing information

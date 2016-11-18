@@ -24,7 +24,7 @@ bcrypt.genSalt(function (err, salt) {
 
     // create the new user (save to db) with hashed password
     UserModel.create({
-      // name: name,
+      name: name,
       // employee: employee,
       email: email,
       passwordDigest: hash
