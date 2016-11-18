@@ -1,10 +1,20 @@
 $(document).ready(function(){
-console.log('app.js linked');
+var employees;
 
-$('.headLine').css("background-color", "orange");
-
-
-
+$.ajax({
+  method: 'GET',
+  url: 'http://localhost:3000/api/employees',
+  dataType: 'json',
+  success: onSuccess
+});
+function onSuccess(json){
+  employees = json;
+  console.log(json);
+  var source = $('#employeeInformation').html();
+  var template = Handlebars.compile(source);
+  var employeeHtml = template({ employees });
+  $('#employeedata').append(employeeHtml);
+};
 
 
 

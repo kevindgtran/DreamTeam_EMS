@@ -1,6 +1,24 @@
 .btn-danger{
-  margin-left: 10px;
+  margin-top: 10px;
 }
 .table-striped{
   border: 1px solid #d3d3d3;
+}
+#businessInfo{
+  background-color: #6897bb;
+  width: 40%;
+  height: 89px;
+  margin-bottom: 2%;
+  margin-top: 1%;
+  margin-left: 10%;
+  padding-left: 2%;
+  padding-top: 1%;
+  border-radius: 2px;
+}
+.search-btn{
+}
+.btn-json{
+}
+.nav{
+  /*border: 1px solid red;*/
 }

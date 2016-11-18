@@ -1,12 +1,17 @@
 var express = require('express'),
-	bodyParser = require('body-parser');
+		bodyParser = require('body-parser'),
+		// fixes cross origins
+		cors = require('cors')
+		;
+
 
 // connect to db models
 var db = require('./models');
-
 var controllers = require('./controllers');
-
 var app = express();
+
+// fixes cross origins
+app.use(cors());
 
 // serve static files in public
 app.use(express.static('public'));
@@ -29,17 +34,19 @@ app.get('/', function(req, res) {
 
 app.get('/api/companies', controllers.companies.index);
 
-
-
+//where the api is grabbing information
+app.get('/api/employees', function(req, res) {
+	res.json(employees);
+});
 
 
 var employees = [
   {
     name: 'Josefa Robel',
     positionTitle: 'Junior Web Developer',
-    phoneNumber: '(496)261-9509',
+    phoneNumber: '(496) 261-9509',
     email: 'Josefa.Robel@gmail.com',
-		emergencyContact: 'Jane Robel - sister (496)261-9508',
+		emergencyContact: 'Jane Robel - sister (496) 261-9508',
 		birthday: '2/23/1986',
     equity: '.5',
     fullTime: true,
@@ -51,11 +58,11 @@ var employees = [
     badgePhoto: 'https://s3.amazonaws.com/uifaces/faces/twitter/pifagor/128.jpg'
   },
   {
-    name: 'Bridie Franecki IV',
+    name: 'Bridie Franecki',
     positionTitle: 'Lead Architect',
-    phoneNumber: '(388)731-3294 x470',
+    phoneNumber: '(388) 731-3294',
     email: 'Bridie_Franecki@gmail.com',
-		emergencyContact: 'Kevin Newhall - friend (388)371-9328',
+		emergencyContact: 'Kevin Newhall - friend (388) 371-9328',
 		birthday: '10/26/1970',
     equity: '1.7',
     fullTime: true,
@@ -69,9 +76,9 @@ var employees = [
   {
     name: 'Wanda Connelly',
     positionTitle: 'Designer',
-    phoneNumber: '(415)337-2060',
+    phoneNumber: '(415) 337-2060',
     email: 'Wanda.Connelly86@yahoo.com',
-		emergencyContact: 'Kyle Connelly - husband (415)337-9368',
+		emergencyContact: 'Kyle Connelly - husband (415) 337-9368',
 		birthday: '5/4/1985',
     equity: '.8',
     fullTime: true,
@@ -85,7 +92,7 @@ var employees = [
   {
     name: 'Carl S. Rogers',
     positionTitle: 'Data Scientist',
-    phoneNumber: '(510)157-1533',
+    phoneNumber: '(510) 157-1533',
     email: 'Clrogers40@gmail.com',
 		emergencyContact: 'Stephen Stain - uncle (650)327-3968',
 		birthday: '1/25/1984',
@@ -99,9 +106,9 @@ var employees = [
     badgePhoto: 'https://s3.amazonaws.com/uifaces/faces/twitter/shadeed9/128.jpg'
   },
 	{
-		name: 'Bobbie Williamson',
+		name: 'Bobby Williams',
 		positionTitle: 'Database Engineer',
-		phoneNumber: '(650)347-1624',
+		phoneNumber: '(650) 347-1624',
 		email: 'Bobbie.Williamson33@hotmail.com',
 		emergencyContact: 'Jennifer Roy - friend (510)867-7298',
 		birthday: '8/7/1982',
@@ -117,7 +124,7 @@ var employees = [
 	{
 		name: 'Tony Casper',
 		positionTitle: 'Software Engineer',
-		phoneNumber: '(510)578-7065',
+		phoneNumber: '(510) 578-7065',
 		email: 'Tina_Casper@hotmail.com',
 		emergencyContact: 'Rick James - friend (408)892-9098',
 		birthday: '2/22/1974',
@@ -133,7 +140,7 @@ var employees = [
 	{
 		name: 'Burley Hickle',
 		positionTitle: 'Senior Developer',
-		phoneNumber: '(510)136-5482',
+		phoneNumber: '(510) 136-5482',
 		email: 'Burley_Hickle50@yahoo.com',
 		emergencyContact: 'Tommy Ferrel - cousin (510)873-9892',
 		birthday: '2/22/1974',
@@ -149,7 +156,7 @@ var employees = [
 	{
 		name: 'Neha Kuhic',
 		positionTitle: 'Quality Assurance Engineer',
-		phoneNumber: '(408)447-7489',
+		phoneNumber: '(408) 447-7489',
 		email: 'Neha.Kuhic@gmail.com',
 		emergencyContact: 'Adrian Khan - cousin (510)873-9992',
 		birthday: '6/28/1983',
