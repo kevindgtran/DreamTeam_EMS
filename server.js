@@ -1,26 +1,34 @@
 var express = require('express'),
 		bodyParser = require('body-parser'),
-		// fixes cross origins
-		cors = require('cors')
-		;
+		cors = require('cors'),
+		mongoose = require('mongoose'),
+		db = require('./models'),
+		controllers = require('./controllers'),
+		app = express(),
+		User = require('./models/user');
 
 
-// connect to db models
-var db = require('./models');
-var controllers = require('./controllers');
-var app = express();
 
-// fixes cross origins
-app.use(cors());
-
-// serve static files in public
-app.use(express.static('public'));
+		app.use(cors());
+		app.use(express.static('public'));
+		app.set('view engine', 'ejs');
+		app.use(bodyParser.urlencoded({extended: true}));
+		mongoose.createConnection('mongodb://localhost/project-1');
 
 
-// body parser
-app.use(bodyParser.urlencoded({
-	extended: true
-}));
+		app.get('/signup', function (req, res) {
+  	res.render('signup');
+		});
+
+		app.get('/login', function (req, res) {
+  	res.send('login coming soon');
+		});
+
+		app.post('/users', function (req, res) {
+			User.createSecure(req.body.email, req.body.password, function (err, user) {
+	    res.json(user);
+			});
+		});
 
 
 
