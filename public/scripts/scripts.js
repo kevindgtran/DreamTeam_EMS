@@ -3,11 +3,16 @@ $(document).ready(function(){
   var signupData = $("#signup-form").serialize();
   console.log(signupData);
 
-
   $.post('/users', signupData, function(response){
     console.log(response);
   })
 
+$('#loginButton').on('click', function(event){
+  event.preventDefault();
+  $.post('/sessions', signupData, function(response){
+    console.log(response);
+    })
+  })
 
 
 
