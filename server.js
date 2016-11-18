@@ -21,13 +21,17 @@ var express = require('express'),
 		});
 
 		app.get('/login', function (req, res) {
-  	res.send('login coming soon');
+  	res.render('login');
 		});
 
 		app.post('/users', function (req, res) {
 			User.createSecure(req.body.email, req.body.password, function (err, user) {
 	    res.json(user);
 			});
+		});
+
+		app.post('/sessions', function (req, res) {
+		res.send('testing');
 		});
 
 

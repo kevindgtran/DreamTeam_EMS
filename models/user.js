@@ -10,11 +10,11 @@ var UserSchema = new Schema({
   // employee: [Employee Schema]
 });
 
+// var newUser = req.body;
 // create a new user with secure (hashed) password
-UserSchema.statics.createSecure = function (email, password, callback) {
+UserSchema.statics.createSecure = function (name, email, password, callback) {
 // `this` references our user model, since this function will be called from the model itself
 // store it in variable `UserModel` because `this` changes context in nested callbacks
-
 var UserModel = this;
 
 // hash password user enters at sign up
