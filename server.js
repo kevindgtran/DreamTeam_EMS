@@ -5,7 +5,8 @@ var express = require('express'),
 		db = require('./models'),
 		controllers = require('./controllers'),
 		app = express(),
-		User = require('./models/user');
+		User = require('./models/user'),
+		session = require('express-session');
 
 
 
@@ -14,7 +15,12 @@ var express = require('express'),
 		app.set('view engine', 'ejs');
 		app.use(bodyParser.urlencoded({extended: true}));
 		mongoose.createConnection('mongodb://localhost/project-1');
-
+		app.use(session({
+  	saveUninitialized: true,
+  	resave: true,
+  	secret: 'SuperSecretCookie',
+  	cookie: { maxAge: 30 * 60 * 1000 } // 30 minute cookie lifespan (in milliseconds)
+		}));
 
 		app.get('/signup', function (req, res) {
   	res.render('signup');
@@ -24,19 +30,36 @@ var express = require('express'),
   	res.render('login');
 		});
 
+		app.get('/profile', function (req, res) {
+  	// find the user currently logged in
+  	User.findOne({_id: req.session.userId}, function (err, currentUser) {
+    res.render('profile.ejs', {user: currentUser})
+  		});
+		});
+
 
 		app.post('/users', function (req, res) {
 			User.createSecure(req.body.name, req.body.email, req.body.password, function (err, user) {
 	    res.json(user);
 			});
-			console.log(req.body);
+			// console.log(req.body);
 		});
 
-		app.post('/sessions', function (req, res) {
-			User.authenticate(req.body.name, req.body.email, req.body.password, function (err, user) {
-				res.json(user);
-			});
-		});
+		app.post('/sessions', function(req, res) {
+   db.User.authenticate(req.body.name, req.body.email, req.body.password, function(err, user) {
+       if (user) {
+           req.session.userId = user._id;
+           res.redirect('/profile');
+					 console.log('test logged in successful');
+       } else {
+         res.redirect('/login');
+				 console.log('test not logged in');
+
+       }
+   });
+});
+
+
 
 
 
