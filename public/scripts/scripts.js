@@ -9,15 +9,14 @@ $('form').on('submit', function(event){
 
   $.post('/users', signupData, function(response){
     console.log(response);
-  })
-})
+  });
+});
 
 
 $('#loginButton').on('submit', function(event){
   var loginData = $('#login-form').serialize();
-  console.log(loginData);
-  // $.post('/sessions', loginData, function())
-  })
+  // console.log(loginData);
+  });
 
 
 
