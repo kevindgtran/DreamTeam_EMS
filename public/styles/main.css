@@ -1,3 +1,6 @@
+.headerBox{
+  
+}
 .btn-danger{
   margin-top: 10px;
 }
@@ -15,10 +18,11 @@
   padding-top: 1%;
   border-radius: 2px;
 }
-.search-btn{
+.testBox1{
+  border: 1px solid red;
+  height: 100px;
 }
-.btn-json{
-}
-.nav{
-  /*border: 1px solid red;*/
+.testBox2{
+  border: 1px solid blue;
+  height: 100px;
 }
