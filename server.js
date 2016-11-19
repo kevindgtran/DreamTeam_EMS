@@ -24,14 +24,18 @@ var express = require('express'),
   	res.render('login');
 		});
 
+
 		app.post('/users', function (req, res) {
-			User.createSecure(req.body.email, req.body.password, function (err, user) {
+			User.createSecure(req.body.name, req.body.email, req.body.password, function (err, user) {
 	    res.json(user);
 			});
+			console.log(req.body);
 		});
 
 		app.post('/sessions', function (req, res) {
-		res.send('testing');
+			User.authenticate(req.body.name, req.body.email, req.body.password, function (err, user) {
+				res.json(user);
+			});
 		});
 
 
