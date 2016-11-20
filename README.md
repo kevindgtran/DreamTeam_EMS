@@ -9,3 +9,5 @@ A full stack CMS (Content Management System) for startups & small companies to e
 ### Behind the creation
 
 To develop a deep understanding of web applications database management & **C.R.U.D** operations (**C**reate, **R**ead, **U**pdate, **D**elete).
+
+![Alt text](/docs/loginDashboard.png?raw=true "Optional Title")
