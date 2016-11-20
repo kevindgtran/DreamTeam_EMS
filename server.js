@@ -30,21 +30,6 @@ var express = require('express'),
   	res.render('login');
 		});
 
-		app.get('/profile', function (req, res) {
-  	// find the user currently logged in
-  	User.findOne({_id: req.session.userId}, function (err, currentUser) {
-    res.render('profile.ejs', {user: currentUser})
-  		});
-		});
-
-
-		app.post('/users', function (req, res) {
-			User.createSecure(req.body.name, req.body.email, req.body.password, function (err, user) {
-	    res.json(user);
-			});
-			// console.log(req.body);
-		});
-
 		app.post('/sessions', function(req, res) {
    db.User.authenticate(req.body.name, req.body.email, req.body.password, function(err, user) {
        if (user) {
@@ -59,7 +44,21 @@ var express = require('express'),
    });
 });
 
+		app.get('/profile', function (req, res) {
+		User.findOne({
+				_id: req.session.userId
+			}, function (err, currentUser) {
+		res.render('profile.ejs', {
+			user: currentUser
+				})
+			});
+		});
 
+		app.post('/users', function (req, res) {
+			User.createSecure(req.body.name, req.body.email, req.body.password, function (err, user) {
+			res.json(user);
+			});
+		});
 
 
 
@@ -72,8 +71,6 @@ app.get('/', function(req, res) {
 
 
 app.get('/api/companies', controllers.companies.index);
-
-//where the api is grabbing information
 app.get('/api/employees', function(req, res) {
 	res.json(employees);
 });

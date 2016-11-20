@@ -1,26 +1,17 @@
-.headerBox{
-  
-}
 .btn-danger{
   margin-top: 10px;
 }
 .table-striped{
   border: 1px solid #d3d3d3;
 }
-#businessInfo{
-  background-color: #6897bb;
-  width: 40%;
-  height: 89px;
-  margin-bottom: 2%;
-  margin-top: 1%;
-  margin-left: 10%;
-  padding-left: 2%;
-  padding-top: 1%;
-  border-radius: 2px;
-}
 .testBox1{
-  border: 1px solid red;
-  height: 100px;
+  border: 1px solid #d3d3d3;
+}
+h1{
+border-radius: 3px;
+background-color: #088da5;
+display: inline-block;
+padding: 3% 18%;
 }
 .testBox2{
   border: 1px solid blue;
