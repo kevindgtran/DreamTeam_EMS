@@ -3,7 +3,7 @@ var employees;
 
 $.ajax({
   method: 'GET',
-  url: 'http://localhost:3000/api/employees',
+  url: 'http://localhost:3000/api/companies',
   dataType: 'json',
   success: onSuccess
 });
