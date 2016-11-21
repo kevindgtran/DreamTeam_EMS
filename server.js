@@ -71,8 +71,7 @@ app.get('/', function(req, res) {
 
 app.get('/api/companies', controllers.companies.index);
 
-app.get('api/companies:companyId/employees', controllers.companies.show);
-
+app.get('/api/companies/:companyId', controllers.companies.show);
 
 
 

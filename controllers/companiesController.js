@@ -1,6 +1,5 @@
 var db = require('../models');
 
-
 // get /api/companies
 function index(req, res) {
   db.Company.find({}, function(err, allCompanies) {
@@ -10,14 +9,13 @@ function index(req, res) {
 
 
 function show(req, res) {
-  db.Company.findById(req.params.companyId.employees, function(err, foundCompany) {
+  console.log("DONUTS " + req.params.companyId);
+  db.Company.findById(req.params.companyId, function(err, foundCompany) {
     if(err) { console.log(err); }
     console.log('companiesController.show responding with', foundCompany);
     res.json(foundCompany);
   });
 }
-
-
 
 
 module.exports = {
