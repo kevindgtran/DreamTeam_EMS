@@ -1,6 +1,5 @@
 var db = require('../models');
 
-
 // get /api/companies
 function index(req, res) {
   db.Company.find({}, function(err, allCompanies) {

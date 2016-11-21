@@ -8,8 +8,8 @@ $.ajax({
   success: onSuccess
 });
 function onSuccess(json){
-  employees = json;
-  console.log(json);
+  employees = json[0].employees;
+  console.log(json[0].employees);
   var source = $('#employeeInformation').html();
   var template = Handlebars.compile(source);
   var employeeHtml = template({ employees });
