@@ -1,0 +1,31 @@
+mongoDB and Mongoose
+
+MongoDB is a document oriented database vs SQL which is a relational/ table oriented database
+
+Installation:
+#1. install MongoDB on computer
+#2. install Mongo & Mongoose in project (npm install --save mongoose)
+#3. require it in your project server file (
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/an-app-name-of-your-choice');
+)
+#4. lastly, run mongod to enable MongoDB service
+
+File structure:
+- Create Models folder, inside create your "models" of data (ie todo.js, books.js, author.js, employees.js, etc.)
+In your data files (todo.js) - create your model schema and export it so it can be used in other parts of the project. (
+var mongoose = require('mongoose'),
+  Schema = mongoose.Schema;
+
+  var TodoSchema = new Schema({
+    task: String,
+    description: String
+  });
+
+  var Todo = mongoose.model('Todo', TodoSchema);
+
+  module.exports = Todo;
+)
+- Require your models in server.js (
+var Todo = require('./models/todo');
+)
