@@ -40,7 +40,6 @@ $(document).ready(function() {
 
   function newEmployee(json) {
     $('#employeedata input').val('');
-    allEmployees.push(json);
     onSuccess(json);
   }
 
