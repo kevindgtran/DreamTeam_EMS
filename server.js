@@ -22,6 +22,10 @@ var express = require('express'),
   	cookie: { maxAge: 30 * 60 * 1000 } // 30 minute cookie lifespan (in milliseconds)
 		}));
 
+		/***********
+		* ROUTES *
+		***********/
+
 		app.get('/signup', function (req, res) {
   	res.render('signup');
 		});
@@ -70,8 +74,10 @@ app.get('/', function(req, res) {
 
 
 app.get('/api/companies', controllers.companies.index);
+app.get('/api/companies/:companyId', controllers.companies.show);
 
-app.get('api/companies:companyId/employees', controllers.companies.show);
+app.get('api/companies/:companyId/employees', controllers.employee.index);
+
 
 //where the api is grabbing information
 // app.get('/api/companies', function(req, res) {
@@ -79,7 +85,9 @@ app.get('api/companies:companyId/employees', controllers.companies.show);
 // });
 
 
-
+/***********
+* SERVER *
+***********/
 
 
 

@@ -8,14 +8,14 @@ function index(req, res) {
     });
   }
 
-
 function show(req, res) {
-  db.Company.findById(req.params.companyId.employees, function(err, foundCompany) {
+  db.Company.findById(req.params.companyId, function(err, foundCompany) {
     if(err) { console.log(err); }
     console.log('companiesController.show responding with', foundCompany);
     res.json(foundCompany);
   });
 }
+
 
 
 

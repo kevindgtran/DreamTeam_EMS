@@ -3,10 +3,11 @@ var employees;
 
 $.ajax({
   method: 'GET',
-  url: 'http://localhost:3000/api/companies/',
+  url: 'http://localhost:3000/api/companies/:companyId/employees',
   dataType: 'json',
   success: onSuccess
 });
+
 function onSuccess(json){
   employees = json;
   console.log(json);
@@ -14,7 +15,8 @@ function onSuccess(json){
   var template = Handlebars.compile(source);
   var employeeHtml = template({ employees });
   $('#employeedata').append(employeeHtml);
-};
+}
+
 
 
 
