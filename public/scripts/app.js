@@ -4,7 +4,7 @@ var allEmployees = [];
 
 $(document).ready(function() {
   console.log("App initiated")
-  
+
 
   $.ajax({
       method: 'GET',
@@ -24,12 +24,14 @@ $(document).ready(function() {
     $('#employeedata').append(employeeHtml);
 };
 
+
   $('#createButton').on('click', function(e) {
       e.preventDefault();
+      console.log('New employee created', $(this).serialize());
       $.ajax({
         method: 'POST',
         url: '/api/companies/:companyId/employees',
-        dataType: 'json',
+        data: $(this).serialize(),
         success: newEmployee,
         error: newEmployeeError
       });
@@ -37,7 +39,7 @@ $(document).ready(function() {
   });
 
   function newEmployee(json) {
-    $('.form-group input').val('');
+    $('#employeedata input').val('');
     allEmployees.push(json);
     onSuccess(json);
   }
