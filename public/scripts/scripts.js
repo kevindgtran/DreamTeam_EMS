@@ -19,5 +19,4 @@ $('#loginButton').on('submit', function(event){
   });
 
 
-
 });
