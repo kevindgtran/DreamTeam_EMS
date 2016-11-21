@@ -73,10 +73,7 @@ app.get('/api/companies', controllers.companies.index);
 
 app.get('api/companies:companyId/employees', controllers.companies.show);
 
-//where the api is grabbing information
-// app.get('/api/companies', function(req, res) {
-// 	res.json(company.employees);
-// });
+
 
 
 
