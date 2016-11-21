@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
-    bcrypt = require('bcryptjs');
+    bcrypt = require('bcryptjs'),
+    Employee = require('./employee');
 
 var Schema = mongoose.Schema;
 
@@ -7,7 +8,7 @@ var UserSchema = new Schema({
   name: String,
   email: String,
   passwordDigest: String
-  // employee: [Employee Schema]
+  // employee: {type: Schema.Types.ObjectId, ref: 'Employee'}
 });
 
 // var newUser = req.body;

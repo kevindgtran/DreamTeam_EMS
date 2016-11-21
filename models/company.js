@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
-  Schema = mongoose.Schema;
+  Schema = mongoose.Schema,
+  Employee = require('./employee');
 
   var CompanySchema = new Schema({
     name: String,
@@ -7,7 +8,7 @@ var mongoose = require('mongoose'),
     userName: String,
     password: String,
     email: String,
-    // employees: [EmployeeSchema]
+    employees: [Employee.schema]
   });
 
   var Company = mongoose.model('Company', CompanySchema);
