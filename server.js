@@ -80,19 +80,12 @@ app.get('/api/companies/:companyId/employees', controllers.employee.index);
 
 
 
-<<<<<<< HEAD
 
 
 /***********
 * SERVER *
 ***********/
-=======
-app.get('/api/companies/:companyId', controllers.companies.show);
 
-
-
-
->>>>>>> e36172f8c78b4d2899b56b0e6c528ca5d5b98419
 
 
 
