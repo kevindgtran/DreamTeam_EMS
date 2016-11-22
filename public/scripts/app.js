@@ -1,5 +1,4 @@
-var allEmployees = [];
-  var employees;
+var employees;
 
 
 $(document).ready(function() {
@@ -8,7 +7,7 @@ $(document).ready(function() {
 
   $.ajax({
       method: 'GET',
-      url: 'http://localhost:3000/api/companies',
+      url: '/api/companies',
       dataType: 'json',
       success: onSuccess
   });
@@ -27,15 +26,13 @@ $(document).ready(function() {
 
   $('#createButton').on('click', function(e) {
       e.preventDefault();
-      console.log('New employee created', $(this).serialize());
       $.ajax({
         method: 'POST',
-        url: '/api/companies/:companyId/employees',
+        url: '/api/companies/employees',
         data: $(this).serialize(),
         success: newEmployee,
         error: newEmployeeError
       });
-      console.log('button works');
   });
 
   function newEmployee(json) {
@@ -44,7 +41,7 @@ $(document).ready(function() {
   }
 
   function newEmployeeError() {
-    console.log("error: " + "new employee not created");
+    console.log("ERROR: " + "new employee not created");
   }
 
 });
