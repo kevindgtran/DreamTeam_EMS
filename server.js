@@ -4,13 +4,9 @@ var express = require('express'),
     mongoose = require('mongoose'),
     db = require('./models'),
     controllers = require('./controllers'),
-<<<<<<< HEAD
     app = express()
 
-=======
-    app = express(),
-		session = require('express-session');
->>>>>>> 2852e1f8615d5297dfc26a760c50ee695288dc4b
+
 
 
 
@@ -20,7 +16,6 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-<<<<<<< HEAD
 
 
 
@@ -29,7 +24,7 @@ app.use(bodyParser.urlencoded({
  ***********/
 
 
-=======
+
 mongoose.createConnection('mongodb://localhost/project-1');
 app.use(session({
     saveUninitialized: true,
@@ -44,53 +39,6 @@ app.use(session({
  * ROUTES *
  ***********/
 
-app.get('/signup', function(req, res) {
-    res.render('signup');
-});
-
-app.get('/login', function(req, res) {
-    res.render('login');
-});
-
-app.get('/profile', function(req, res) {
-    // find the user currently logged in
-    db.Company.findOne({
-        _id: req.session.userId
-    }, function(err, currentUser) {
-        res.render('profile.ejs', {
-            user: currentUser
-        })
-    });
-});
-
-
-app.post('/users', function(req, res) {
-    db.Company.createSecure(req.body.name, req.body.email, req.body.password, function(err, user) {
-        res.json(user);
-    });
-    // console.log(req.body);
-});
-
-app.post('/sessions', function(req, res) {
-		console.log(req.body);
-    db.Company.authenticate(req.body.email, req.body.password, function(err, user) {
-        if (user) {
-            req.session.userId = user._id;
-            res.render('/profile', {
-                user: user
-            });
-            console.log('test logged in successful');
-        } else {
-            res.redirect('/login');
-            console.log('test not logged in');
-
-        }
-    });
-});
-
-
-
->>>>>>> 2852e1f8615d5297dfc26a760c50ee695288dc4b
 // get index.html
 app.get('/', function(req, res) {
     res.sendFile('views/index.html', {
