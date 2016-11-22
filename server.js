@@ -46,6 +46,6 @@ app.delete('/api/companies/:companyId/employees', controllers.employee.destroy);
 
 
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
     console.log('listening to http://localhost:3000/');
 });
