@@ -34,6 +34,7 @@ app.get('/api/companies/:companyId', controllers.companies.show);
 
 app.get('/api/companies/:companyId/employees', controllers.employee.index);
 app.post('/api/companies/:companyId/employees', controllers.employee.create);
+app.delete('/api/companies/:companyId/employees', controllers.employee.destroy);
 
 
 

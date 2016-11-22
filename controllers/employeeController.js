@@ -22,11 +22,22 @@ function create(req, res) {
     console.log("saved ", employee.name);
     res.json(employee);
   });
-
 }
+
+
+function destroy(req, res) {
+  console.log("employee delete", req.params);
+  var employeeId = req.params.id;
+  db.Employee.findOneAndRemove({
+    _id: employeeId
+  }, function(err, deletedEmployee) {
+    res.json(deletedEmployee);
+  });
+};
 
 
 module.exports = {
   index: index,
-  create: create
+  create: create,
+  destroy: destroy
 };
