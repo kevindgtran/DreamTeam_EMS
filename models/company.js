@@ -5,8 +5,6 @@ var mongoose = require('mongoose'),
   var CompanySchema = new Schema({
     name: String,
     description: String,
-    userName: String,
-    password: String,
     email: String,
     employees: [Employee.schema]
   });
