@@ -18,23 +18,6 @@ app.use(bodyParser.urlencoded({
 }));
 
 
-
-/***********
- * ROUTES *
- ***********/
-
-
-
-mongoose.createConnection('mongodb://localhost/project-1');
-app.use(session({
-    saveUninitialized: true,
-    resave: true,
-    secret: 'SuperSecretCookie',
-    cookie: {
-        maxAge: 30 * 60 * 1000
-    } // 30 minute cookie lifespan (in milliseconds)
-}));
-
 /***********
  * ROUTES *
  ***********/
