@@ -2,13 +2,13 @@ var db = require('./models');
 
 
 var companiesList = [
-  
+
   {
-    name: 'Kevins mobile apps',
+    name: 'Katie Gizmos & Gadgets',
     description: 'mobile apps for entreprenuers',
-    userName: 'kevinmobileapps',
+    userName: 'katiegizmo',
     password: 'mobileapps',
-    email: 'kevin_tran@kevinsmobileapps.com',
+    email: 'katie@gizmo.com',
 
   }
 ];
