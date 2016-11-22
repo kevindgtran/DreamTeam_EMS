@@ -11,9 +11,182 @@
     <title>blank</title>
   </head>
   <body>
-    <div class="headLine col-md-4 col-md-offset-4">
-    <h1>Project 1</h1>
+    <div class="container">
+      <div class="testBox1 col-md-12">
+        <h1>Business Name</h1>
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <div class="btn-group">
+          <button type="button" class="btn btn-success">Export</button>
+          <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">JSON</a></li>
+          </ul>
+          </div>
+        </form>
+      </div>
     </div>
-
-  </body>
+  <div id="employeedata">
+  <div class="container">
+  <table id="" class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Postition</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Emergency Contact</th>
+        <th>Allergies</th>
+        <th>Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- hard coded data - example -->
+      <tr>
+        <td>
+          <div class="form-group" method: "POST" action: '/api/companies/:companyId/employees'>
+          <input type="text" name="name" class="form-control" id="exampleInputName2" placeholder="test1">
+          </div>
+        </td>
+        <td>
+          <select name="positionTitle" class="form-control">
+            <option></option>
+            <option>Administrative Staff</option>
+            <option>Data Scientist</option>
+            <option>Designer</option>
+            <option>Finance Manager</option>
+            <option>Human Resources</option>
+            <option>Junior Web Developer</option>
+            <option>Lead Software Engineer</option>
+            <option>Software Engineer</option>
+            <option>Web Developer</option>
+            <option>other</option>
+          </select>
+        </td>
+        <td>
+          <div class="form-group">
+          <input type="text" name="phoneNumber" class="form-control" id="exampleInputName2" placeholder="test3">
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+          <input type="text" name="email" class="form-control" id="exampleInputName2" placeholder="test4">
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+          <input type="text" name="emergencyContact" class="form-control" id="exampleInputName2" placeholder="test5">
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+          <input type="text" name="allergies" class="form-control" id="exampleInputName2" placeholder="test6">
+          </div>
+          </td>
+        <td><button type="button" id="createButton" class="btn btn-info">Create</button></td>
+      </tr>
+      </script>
+      </div>
+    </tbody>
+  </table>
+</div>
+<div id="employeedata">
+<script id="employeeInformation" type="text/x-handlebars-template">
+<div class="container">
+<table id="" class="table table-striped table-bordered table-hover table-condensed">
+  <tbody>
+    {{#each employees}}
+    <tr>
+      <td>{{name}}</td>
+      <td>{{positionTitle}}</td>
+      <td>{{phoneNumber}}</td>
+      <td>{{email}}</td>
+      <td>{{emergencyContact}}</td>
+      <td>{{allergies}}</td>
+      <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target=".bs-example-modal-lg">edit</button><button type="button" class="btn btn-danger btn-xs">Delete</button></td>
+    </tr>
+    {{/each}}
+    </script>
+    </div>
+  </tbody>
+</table>
+</div>
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Employee Details</h4>
+      </div>
+      <div class="modal-body">
+        <table id="" class="table table-striped table-bordered table-hover table-condensed">
+          <tbody>
+            <tr>
+              <td>
+                <div class="form-group modal-column">
+                <label>Name </label>
+                <input type="text" class="form-control" id="" placeholder="">
+                <label>Position </label>
+                <select class="form-control">
+                  <option></option>
+                  <option>Administrative Staff</option>
+                  <option>Data Scientist</option>
+                  <option>Designer</option>
+                  <option>Finance Manager</option>
+                  <option>Human Resources</option>
+                  <option>Junior Web Developer</option>
+                  <option>Lead Software Engineer</option>
+                  <option>Software Engineer</option>
+                  <option>Web Developer</option>
+                  <option>other</option>
+                </select>
+                <label>Phone Number </label>
+                <input type="text" class="form-control" id="" placeholder="">
+                <label>Email </label>
+                <input type="text" class="form-control" id="" placeholder="">
+                <label>Birthday </label>
+                <input type="text" class="form-control" id="" placeholder="">
+                <label>Equity </label>
+                <input type="text" class="form-control" id="" placeholder="">
+                </div>
+              </td>
+              <td>
+                <div class="form-group modal-column">
+                <label>Full Time </label>
+                <select class="form-control">
+                  <option></option>
+                  <option>true</option>
+                  <option>false</option>
+                  <option>other</option>
+                </select>
+                <label>Start Date </label>
+                <input type="text" class="form-control" id="" placeholder="">
+                <label>Salary </label>
+                <input type="text" class="form-control" id="" placeholder="">
+                <label>Shirt Size </label>
+                <input type="text" class="form-control" id="" placeholder="">
+                <label>Favorite Food </label>
+                <input type="text" class="form-control" id="" placeholder="cookies, pizza, etc.">
+                <label>Alergies </label>
+                <input type="text" class="form-control" id="" placeholder="peanuts, milk, etc.">
+                </div>
+              </td>
+            </tr>
+            </div>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 </html>
