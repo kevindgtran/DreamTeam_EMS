@@ -1,4 +1,6 @@
+
 var employees;
+
 
 
 $(document).ready(function() {
@@ -33,6 +35,7 @@ $(document).ready(function() {
         success: newEmployee,
         error: newEmployeeError
       });
+
   });
 
   function newEmployee(json) {

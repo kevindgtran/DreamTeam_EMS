@@ -9,6 +9,7 @@ var express = require('express'),
 
 
 
+
 app.use(cors());
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -17,11 +18,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 
-
 /***********
  * ROUTES *
  ***********/
-
 
 // get index.html
 app.get('/', function(req, res) {
