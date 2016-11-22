@@ -34,6 +34,7 @@ app.get('/api/companies/:companyId', controllers.companies.show);
 
 app.get('/api/companies/:companyId/employees', controllers.employee.index);
 app.post('/api/companies/:companyId/employees', controllers.employee.create);
+app.delete('/api/companies/:companyId/employees', controllers.employee.destroy);
 
 
 
@@ -44,6 +45,8 @@ app.post('/api/companies/:companyId/employees', controllers.employee.create);
 
 
 
-app.listen(process.env.PORT || 3000, function () {
-  console.log('listening to http://localhost:3000/');
+
+
+app.listen(process.env.PORT || 3000, function() {
+    console.log('listening to http://localhost:3000/');
 });
