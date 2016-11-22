@@ -28,7 +28,7 @@ $(document).ready(function() {
       e.preventDefault();
       $.ajax({
         method: 'POST',
-        url: '/api/companies/employees',
+        url: '/api/companies/:companyId/employees',
         data: $(this).serialize(),
         success: newEmployee,
         error: newEmployeeError
