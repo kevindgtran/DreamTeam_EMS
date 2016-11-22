@@ -9,13 +9,13 @@ function index(req, res) {
 
 
 function show(req, res) {
-  console.log("DONUTS " + req.params.companyId);
   db.Company.findById(req.params.companyId, function(err, foundCompany) {
     if(err) { console.log(err); }
     console.log('companiesController.show responding with', foundCompany);
     res.json(foundCompany);
   });
 }
+
 
 
 module.exports = {

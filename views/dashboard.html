@@ -49,12 +49,12 @@
       <!-- hard coded data - example -->
       <tr>
         <td>
-          <div class="form-group">
-          <input type="text" class="form-control" id="exampleInputName2" placeholder="">
+          <div class="form-group" method: "POST" action: '/api/companies/:companyId/employees'>
+          <input type="text" name="name" class="form-control" id="exampleInputName2" placeholder="test1">
           </div>
         </td>
         <td>
-          <select class="form-control">
+          <select name="positionTitle" class="form-control">
             <option></option>
             <option>Administrative Staff</option>
             <option>Data Scientist</option>
@@ -70,22 +70,22 @@
         </td>
         <td>
           <div class="form-group">
-          <input type="text" class="form-control" id="exampleInputName2" placeholder="">
+          <input type="text" name="phoneNumber" class="form-control" id="exampleInputName2" placeholder="test3">
           </div>
         </td>
         <td>
           <div class="form-group">
-          <input type="text" class="form-control" id="exampleInputName2" placeholder="">
+          <input type="text" name="email" class="form-control" id="exampleInputName2" placeholder="test4">
           </div>
         </td>
         <td>
           <div class="form-group">
-          <input type="text" class="form-control" id="exampleInputName2" placeholder="">
+          <input type="text" name="emergencyContact" class="form-control" id="exampleInputName2" placeholder="test5">
           </div>
         </td>
         <td>
           <div class="form-group">
-          <input type="text" class="form-control" id="exampleInputName2" placeholder="">
+          <input type="text" name="allergies" class="form-control" id="exampleInputName2" placeholder="test6">
           </div>
           </td>
         <td><button type="button" id="createButton" class="btn btn-info">Create</button></td>
