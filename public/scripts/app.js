@@ -16,7 +16,7 @@ $(document).ready(function() {
 
   function onSuccess(json) {
     console.log(json);
-    employees = json[0].employees;
+    employees = json[0].employee;
     var source = $('#employeeInformation').html();
     var template = Handlebars.compile(source);
     var employeeHtml = template({
