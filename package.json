@@ -21,12 +21,6 @@
   },
   "homepage": "https://github.com/theycallmekevo/Project-1#readme",
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "cors": "^2.8.1",
-    "ejs": "^2.5.2",
-    "express": "^4.14.0",
-    "express-session": "^1.14.2",
-    "mongodb": "^2.2.11",
-    "mongoose": "^4.6.8"
+    "express": "^4.14.0"
   }
 }
