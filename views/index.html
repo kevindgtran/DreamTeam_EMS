@@ -15,8 +15,24 @@
   <body>
     <div class="container">
       <h1 class="text-center">Dream Team, CRM</h1><hr><br>
+      <form id="company-form" method="POST" action="http://localhost:3000/api/companies">
+        <label for="name">Company Name: </label>
+        <input id="companyName" name="name" type="text" />
+        <input type="submit" />
+      </form><br>
       <div id="company_data"></div>
       <hr>
+      <form id="employee-form" method="POST" action="http://localhost:3000/api/employees">
+        <label for="name">Name: </label>
+        <input id="employeeName" name="name" type="text" />
+        <label for="title">Title: </label>
+        <input id="employeeTitle" name="positionTitle" type="text" />
+        <label for="email">Email: </label>
+        <input id="employeeEmail" name="email" type="text" />
+        <label for="phoneNumber">Phone Number: </label>
+        <input id="employeePhone" name="phoneNumber" type="text" />
+        <input type="submit" />
+      </form><br>
       <div id="employee_data"></div>
     </div>
   </body>

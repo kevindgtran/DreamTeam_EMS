@@ -1,4 +1,3 @@
-console.log("JS is working!");
 $(document).ready(function(){
   $.ajax({
     method: 'GET',
@@ -8,10 +7,9 @@ $(document).ready(function(){
     error: onEmployeesError
   });
   function onEmployeesSuccess(json){
-    console.log('js linked!');
-    for (var i = 0; i < json.length; i++) {
-    $('#employee_data').append('<h4>' + json[i].name + ', ' + json[i].positionTitle + ', ' + json[i].email + ', ' + json[i].phoneNumber + '</h4>');
-    }
+      for (var i = 0; i < json.length; i++) {
+      $('#employee_data').append('<h4>' + json[i].name + ', ' + json[i].positionTitle + ', ' + json[i].email + ', ' + json[i].phoneNumber + '</h4>');
+      }
   };
   function onEmployeesError(){
     console.log('error rendering employee details');
@@ -25,7 +23,6 @@ $(document).ready(function(){
     error: onCompaniesError
   });
   function onCompaniesSuccess(json){
-    console.log('js linked!');
     for (var i = 0; i < json.length; i++) {
     $('#company_data').append('<h4>' + json[i].name + '</h4>');
     }
@@ -33,6 +30,34 @@ $(document).ready(function(){
   function onCompaniesError(){
     console.log('error rendering company details');
   };
+
+  $.ajax({
+    method: "POST",
+    url: "http://localhost:3000/api/employees",
+    data: $('#employee-form').serialize(),
+    success: handleEmployeeCreateSuccess,
+    error: handleEmployeeCreateError
+  });
+  function handleEmployeeCreateSuccess(responseDate) {
+    console.log("employee was successfully created!");
+  }
+  function handleEmployeeCreateError(jqXHR, status, error){
+    console.log('error:', error);
+  }
+
+  $.ajax({
+    method: "POST",
+    url: "http://localhost:3000/api/companies",
+    data: $('#company-form').serialize(),
+    success: handleCompanyCreateSuccess,
+    error: handleCompanyCreateError
+  });
+  function handleCompanyCreateSuccess(responseDate) {
+    console.log("company was successfully created!");
+  }
+  function handleCompanyCreateError(jqXHR, status, error){
+    console.log('error:', error);
+  }
 
 
 

@@ -1,6 +1,9 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
+
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -80,14 +83,39 @@ var employees = [
 	}
 ];
 
+//READ ALL EMPLOYEES
 app.get('/api/employees', function(req, res){
   res.json(employees);
 });
 
+//CREATE A NEW EMPLOYEE
+app.post('/api/employees', function employeesCreate(req, res) {
+  var name = req.body.name;
+  var title = req.body.positionTitle;
+  var email = req.body.email;
+  var phone = req.body.phoneNumber;
+  var newEmployee = { name: name, positionTitle: title, email: email, phoneNumber: phone };
+  employees.push(newEmployee);
+  res.json(employees);
+});
+
+//READ ALL COMPANIES
 app.get('/api/companies', function(req, res){
   res.json(companies);
 });
 
+//CREATE A NEW COMPANY
+app.post('/api/companies', function companiesCreate(req, res) {
+  var name = req.body.name;
+  var newCompany = { name: name };
+  companies.push(newCompany);
+  res.json(companies);
+});
+
+
+app.get('/welcome/:company_name', function (req, res) {
+  res.send( 'Welcome back, ' + req.params.company_name );
+});
 
 app.listen(process.env.PORT || 3000, function () {
   console.log('Example app listening at http://localhost:3000/');
