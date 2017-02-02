@@ -53,6 +53,8 @@ $(document).ready(function() {
     });
   });
 
+
+
   function deleteEmployee(json) {
     var employee = json;
     console.log(json);
