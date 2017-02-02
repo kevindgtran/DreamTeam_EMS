@@ -1,8 +1,5 @@
 var db = require('../models');
 
-
-
-
 function index(req, res) {
   db.Company.findById(req.params.companyId, function(err, foundCompany) {
     if(err) { console.log(err); }
@@ -10,7 +7,6 @@ function index(req, res) {
     res.json(foundCompany.employees);
   });
 }
-
 
 function create(req, res) {
   var newEmployee = new db.Employee(req.body);
@@ -24,7 +20,6 @@ function create(req, res) {
   });
 }
 
-
 function destroy(req, res) {
   console.log("employee delete", req.params);
   var employeeId = req.params.id;
@@ -34,7 +29,6 @@ function destroy(req, res) {
     res.json(deletedEmployee);
   });
 };
-
 
 module.exports = {
   index: index,

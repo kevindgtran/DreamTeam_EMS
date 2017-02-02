@@ -1,18 +1,15 @@
 var db = require('./models');
 
-
 var companiesList = [
-  
   {
-    name: 'Kevins mobile apps',
+    name: 'Katie Gizmos & Gadgets',
     description: 'mobile apps for entreprenuers',
-    userName: 'kevinmobileapps',
+    userName: 'katiegizmo',
     password: 'mobileapps',
-    email: 'kevin_tran@kevinsmobileapps.com',
+    email: 'katie@gizmo.com',
 
   }
 ];
-
 
 var employeesList = [
   {
@@ -145,11 +142,9 @@ var employeesList = [
 	}
 ];
 
-
 companiesList.forEach(function(company) {
   company.employees = employeesList;
 });
-
 
 db.Employee.remove({}, function(err, employees) {
   console.log('removed all employees');
@@ -174,5 +169,4 @@ db.Employee.remove({}, function(err, employees) {
       });
     });
   });
-
 });
