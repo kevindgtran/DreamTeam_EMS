@@ -3,7 +3,6 @@ var allEmployees = [];
 $(document).ready(function() {
   console.log("App initiated")
 
-
   $.ajax({
       method: 'GET',
       url: '/api/companies',
@@ -21,7 +20,6 @@ $(document).ready(function() {
     allEmployees.push(employee)
   });
 }
-
 
   $('#createButton').on('click', function(e) {
       e.preventDefault();

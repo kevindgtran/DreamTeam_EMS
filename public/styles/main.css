@@ -1,31 +1,36 @@
-.btn-danger{
+.btn-danger {
   margin-top: 10px;
 }
-.table-striped{
+
+.table-striped {
   border: 1px solid #d3d3d3;
 }
-.testBox1{
+
+.testBox1 {
   border: 1px solid #d3d3d3;
   background-color: #0099cc;
   border-radius: 3px;
 }
-h1{
+
+h1 {
   border-radius: 3px;
   background-color: #eeeeee;
   display: inline-block;
   padding: 3% 18%;
 }
-.modal-column{
+
+.modal-column {
   margin: 20px;
 }
-.modal-header{
+
+.modal-header {
   background-color: #0099cc;
 }
-#firstTable{
+
+#firstTable {
   margin-top: 20px;
 }
-#secondTable{
+
+#secondTable {
   margin-top: 5px;
-}
-.employeeStuff{
 }

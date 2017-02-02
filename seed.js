@@ -1,8 +1,6 @@
 var db = require('./models');
 
-
 var companiesList = [
-  
   {
     name: 'Kevins mobile apps',
     description: 'mobile apps for entreprenuers',
@@ -12,7 +10,6 @@ var companiesList = [
 
   }
 ];
-
 
 var employeesList = [
   {
@@ -145,11 +142,9 @@ var employeesList = [
 	}
 ];
 
-
 companiesList.forEach(function(company) {
   company.employees = employeesList;
 });
-
 
 db.Employee.remove({}, function(err, employees) {
   console.log('removed all employees');
@@ -174,5 +169,4 @@ db.Employee.remove({}, function(err, employees) {
       });
     });
   });
-
 });

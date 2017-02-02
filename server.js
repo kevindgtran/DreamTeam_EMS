@@ -4,12 +4,9 @@ var express = require('express'),
     mongoose = require('mongoose'),
     db = require('./models'),
     controllers = require('./controllers'),
-    app = express()
+    app = express();
 
-
-
-
-
+// middleware
 app.use(cors());
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -36,17 +33,10 @@ app.get('/api/companies/:companyId/employees', controllers.employee.index);
 app.post('/api/companies/:companyId/employees', controllers.employee.create);
 app.delete('/api/companies/:companyId/employees', controllers.employee.destroy);
 
-
-
-
 /***********
  * SERVER *
  ***********/
-
-
-
-
-
+ 
 app.listen(process.env.PORT || 3000, function() {
     console.log('listening to http://localhost:3000/');
 });
