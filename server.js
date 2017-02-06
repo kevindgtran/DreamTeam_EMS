@@ -66,9 +66,7 @@ app.get('/logout', function (req, res) {
 
 // get index.html
 app.get('/', function(req, res) {
-    res.sendFile('views/index.html', {
-        root: __dirname
-    });
+    res.render('login');
 });
 
 app.get('/api/companies', controllers.companies.index);
